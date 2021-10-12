@@ -154,4 +154,10 @@ h1 {
   .between {
     font-size: 8px;
   }
+  .left {
+    padding-left: 20px;
+  }
+  .right p {
+    font-size: 12px;
+  }
 }
