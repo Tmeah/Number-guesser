@@ -1,14 +1,4 @@
 'use strict';
-// console.log(document.querySelector('.message').textContent);
-
-//document.querySelector('.message').textContent = 'Correct Number ✨';
-
-// document.querySelector('.number').textContent = 332;
-
-// document.querySelector('.score').textContent = 21;
-
-//document.querySelector('.guess').value = 23;
-
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
@@ -22,9 +12,7 @@ const displayMessage = function (message) {
 document.querySelector('.check').addEventListener('click', function () {
   let guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
-  // No number
   if (!guess) {
-    // document.querySelector('.message').textContent = '⛔ No number!';
     displayMessage('⛔ No number!');
 
     // Winner
@@ -41,32 +29,17 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highscore;
     }
 
-    //High number
   } else if (guess !== secretNumber) {
     if (score > 1) {
-      // document.querySelector('.message').textContent =
-      //   guess > secretNumber ? 'Too high 📈' : 'Too low 📉';
       displayMessage(guess > secretNumber ? 'Too high 📈' : 'Too low 📉');
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      // document.querySelector('.message').textContent = 'You lost the game 💣';
       displayMessage('You lost the game 💣');
       document.querySelector('.score').textContent = 0;
     }
   }
 
-  //Too Low
-  // else if (secretNumber > guess) {
-  //   if (score > 1) {
-  //     document.querySelector('.message').textContent = 'Too low 📉';
-  //     score--;
-  //     document.querySelector('.score').textContent = score;
-  //   } else {
-  //     document.querySelector('.message').textContent = 'You lost the game 💣';
-  //     document.querySelector('.score').textContent = 0;
-  //   }
-  // }
 });
 
 document.querySelector('.again').addEventListener('click', function () {
@@ -78,7 +51,6 @@ document.querySelector('.again').addEventListener('click', function () {
 
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
-  // document.querySelector('.message').textContent = 'Start guessing...';
   displayMessage('Start guessing...');
   document.querySelector('.score').textContent = score;
 });
